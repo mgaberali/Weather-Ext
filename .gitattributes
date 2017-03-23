@@ -1,0 +1,5 @@
+* text=auto
+.idea
+*.iml
+/node_modules/
+bower_components/

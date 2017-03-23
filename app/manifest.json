@@ -1,0 +1,24 @@
+{
+	"manifest_version": 2,
+	"name": "Weather Checker",
+	"version": "1.0",
+
+	"description": "A web browser extenstion for checking and displaying the weather based on your location",
+
+	"icons": {
+		"48": "icons/weather-48.png",
+		"96": "icons/weather-96.png"
+	},
+
+	"browser_action": {
+	    "default_icon": "icons/weather-48.png",
+	    "default_title": "Weather Checker",
+	    "default_popup": "index.html"
+  	},
+
+	"permissions": [
+		"geolocation"
+	],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

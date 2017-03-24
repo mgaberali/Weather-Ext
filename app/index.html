@@ -16,8 +16,8 @@
     <link href="styles/weather-icons.min.css" rel="stylesheet" type="text/css" media="all" />
     <link href="styles/weather.css" rel="stylesheet" type="text/css" media="all" />
     <link href="styles/main.css" rel="stylesheet" type="text/css" />
-    <link href='//fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300italic,300,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300italic,300,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
   </head>
   <body ng-app="weatherExtApp">
@@ -28,18 +28,6 @@
     <div>
     <div ng-view=""></div>
     </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -54,15 +42,17 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeoz6pMSf7TMa4RpVZFYAzPeX3PumyVIs&libraries=places"></script>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/constants.js"></script>
+        <script src="scripts/utils/date_util.js"></script>
         <script src="scripts/services/weather_service.js"></script>
         <script src="scripts/services/geoip_service.js"></script>
+        <script src="scripts/services/google_places_service.js"></script>
         <script src="scripts/filters/weather_to_class_filter.js"></script>
         <script src="scripts/controllers/popup.js"></script>
-
         <!-- endbuild -->
+
 </body>
 </html>

@@ -1,25 +1,10 @@
 'use strict';
 
 angular.module('weatherExtApp')
-  .controller('PopupController', ['$scope', 'WeatherService', 'GeoIpService',
-   function($scope, WeatherService, GeoIpService){
+  .controller('PopupController', ['$scope', 'WeatherService', 'GeoIpService', 'WEATHER_API_UNITS', 'DateUtil', 'GooglePlacesService',
+   function($scope, WeatherService, GeoIpService, WEATHER_API_UNITS, DateUtil, GooglePlacesService){
 
-    $scope.unit = 'C';
-
-    $scope.today = {
-      date: "January 29th, 2015",
-      temp: 14,
-      weather: "Clouds"
-    };
-
-    $scope.nextDays = [];
-    $scope.nextDays.push({name: 'WED', temp: -2, weather: 'Snow'});
-    $scope.nextDays.push({name: 'THR', temp: 2, weather: 'Clouds'});
-    $scope.nextDays.push({name: 'FRI', temp: 5, weather: 'Rain'});
-    $scope.nextDays.push({name: 'SAT', temp: 14, weather: 'Clear'});
-    $scope.nextDays.push({name: 'SUN', temp: 10, weather: 'Thunderstorm'});
-
-    $scope.city = "Cairo, Egypt";
+    $scope.cityImageUrl = 'url(\'images/banner.jpg\') no-repeat';
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position){
@@ -27,8 +12,8 @@ angular.module('weatherExtApp')
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
 
-        WeatherService.getWeatherByCoordinates(latitude, longitude, 'metric', function(data){
-          $scope.test = data.city.name;
+        WeatherService.getDailyForecastByCoordinates(latitude, longitude, WEATHER_API_UNITS.CELSIUS, function(data){
+          displayWeather(data);
         });
 
       });
@@ -37,11 +22,48 @@ angular.module('weatherExtApp')
 
       GeoIpService.getLocation(function(location){
 
-        WeatherService.getWeatherByCity(location.city, location.country.code, 'metric', function(data){
-          $scope.test = data.city.name;
+        WeatherService.getDailyForecastByCity(location.city, location.country.code, WEATHER_API_UNITS.CELSIUS, function(data){
+          displayWeather(data);
         });
 
       });
+
+    }
+
+    function displayWeather(weatherData){
+      $scope.unit = 'C';
+
+      $scope.city = weatherData.city.name + ', ' + weatherData.city.country;
+
+       GooglePlacesService.getImageForCity(weatherData.city.name, function(imageUrl){
+
+           $scope.$apply(function () {
+              $scope.cityImageUrl = 'url(\''+ imageUrl +'\') no-repeat';
+           });
+
+       });
+
+      var todayWeatherData = weatherData.list[0];
+      var todayDate = new Date(todayWeatherData.dt*1000);
+
+      $scope.today = {
+        date: DateUtil.formatDate(todayDate),
+        temp: todayWeatherData.temp.day | 0,
+        weather: todayWeatherData.weather[0].main
+      };
+
+      $scope.nextDays = [];
+
+      for(var i = 1; i <= 5; i++) {
+
+        var dayData = weatherData.list[i];
+        var date = new Date(dayData.dt*1000)
+        $scope.nextDays.push({name: DateUtil.getDayOfWeek(date),
+                              temp: dayData.temp.day | 0,
+                              weather: dayData.weather[0].main});
+
+
+      }
 
     }
 

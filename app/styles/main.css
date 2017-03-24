@@ -5,7 +5,8 @@ body{
 .wi.today{
   font-size:50px;
   color: #33b3d8;
-  margin-top: 7px
+  margin-top: 15px;
+  margin-left: -5px;
 }
 
 .wi.other-days{

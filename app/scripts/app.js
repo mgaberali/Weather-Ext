@@ -17,7 +17,10 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $compileProvider) {
+
+    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data|chrome-extension):/);
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/popup.html',

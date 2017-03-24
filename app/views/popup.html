@@ -1,1 +1,39 @@
-<h1>Hello from {{test}}</h1>
+<div class="main">
+  <div class="content">
+    <div class="content-top">
+      <div class="content-left">
+        <h6>{{today.date}}</h6>
+        <h2>{{today.temp + '°' + unit}}</h2>
+      </div>
+      <div class="content-right">
+        <h5>{{today.weather}}</h5>
+        <i class="wi today wi-day-sunny"></i>
+      </div>
+      <div ng-repeat="day in nextDays" class="content-last">
+        <h6>{{day.name}}</h6>
+        <i class="wi other-days" ng-class="day.weather | weatherToClass"></i>
+        <p>{{day.temp + '°' + unit}}</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="strip"></div>
+    <div class="banner-bottom" ng-style="{'background': 'url(\'images/banner.jpg\') no-repeat',
+                                          'min-height': '270px',
+                                          'position': 'relative',
+                                          'background-size': 'cover',
+                                          '-webkit-background-size': 'cover',
+                                          '-o-background-size': 'cover',
+                                          '-ms-background-size': 'cover',
+                                          '-moz-background-size': 'cover'}">
+
+      <div class="con-left">
+        <p><i></i>{{city}}</p>
+      </div>
+      <div class="con-right">
+        <a href="#"><img src="images/settings.png" alt="" /></a>
+      </div>
+      <div class="clear"></div>
+
+    </div>
+  </div>
+</div>

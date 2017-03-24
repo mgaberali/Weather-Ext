@@ -407,6 +407,11 @@ module.exports = function (grunt) {
           cwd: 'app',
           dest: '<%= yeoman.dist %>',
           src: 'views/*'
+        }, {
+          expand: true,
+          cwd: 'app',
+          dest: '<%= yeoman.dist %>',
+          src: 'font/*'
         }]
       },
       styles: {

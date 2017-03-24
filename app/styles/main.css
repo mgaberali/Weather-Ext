@@ -1,0 +1,34 @@
+body{
+  width: 600px
+}
+
+.wi.today{
+  font-size:50px;
+  color: #33b3d8;
+  margin-top: 7px
+}
+
+.wi.other-days{
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.wi.other-days.rain{
+  color: #37525e;
+}
+
+.wi.other-days.snow{
+  color: #33b3d8;
+}
+
+.wi.other-days.cloud{
+  color: white;
+}
+
+.wi.other-days.sun{
+  color: white;
+}
+
+.wi.other-days.storm{
+  color: #37525e;
+}

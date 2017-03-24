@@ -1,0 +1,471 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+
+body{
+padding:0;
+margin:0;
+font-family: 'Lato', sans-serif !important;
+background-size:cover;
+-webkit-background-size: cover;
+-o-background-size: cover;
+-ms-background-size: cover;
+-moz-background-size: cover;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin:0;
+}
+p{
+	margin:0;
+}
+ul{
+	margin:0;
+	padding:0;
+}
+label{
+	margin:0;
+}
+/*-- main --*/
+.main{
+
+}
+.main h1{
+	font-size:40px;
+	text-align:center;
+	text-transform:uppercase;
+	font-family: 'Comfortaa', cursive;
+	color:#fff;
+    margin-bottom: 35px;
+	letter-spacing:2px;
+}
+.content{
+	width:100%;
+	margin:0 auto;
+}
+.banner-bottom{
+background-size:cover;
+-webkit-background-size: cover;
+-o-background-size: cover;
+-ms-background-size: cover;
+-moz-background-size: cover;
+min-height: 270px;
+position:relative;
+}
+.content-left{
+	float:left;
+	width:23%;
+}
+.content-right{
+	float:left;
+	width:11%;
+	margin: 0 12px;
+	text-align:center;
+}
+.content-right img{
+	width:100%;
+}
+.content-top {
+    background: #243040;
+    padding: 17px 20px;
+}
+.content-left h6 {
+    font-size: 16px;
+    color: #4C5A6D;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.content-left h2 {
+    font-size: 58px;
+    font-weight: 300;
+    color: #fff;
+}
+.content-right h5{
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+
+}
+.content-last{
+	float:left;
+	width:11%;
+	text-align:center;
+	border-left:1px solid #344152;
+	margin: 0 4px;
+}
+.content-last p{
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+}
+.content-last h6{
+    font-size: 16px;
+    color: #4C5A6D;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.con-left{
+	float:left;
+}
+.con-right{
+	float:right;
+}
+.con-left p{
+	font-size:16px;
+	color:#fff;
+
+}
+.con-left,.con-right{
+	position:absolute;
+
+}
+.con-left{
+	left:20px;
+	bottom:20px;
+}
+.con-right{
+	bottom:10px;
+	right:20px;
+}
+.con-left p i{
+background: url('../images/nav.png') no-repeat 0px 0px;
+width:16px;
+height:16px;
+display:inline-block;
+    margin-right: 12px;
+    vertical-align: sub;
+}
+.strip{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2fb3a8+17,3597bc+59,3597bc+100 */
+background: #2fb3a8; /* Old browsers */
+background: -moz-linear-gradient(left,  #2fb3a8 17%, #3597bc 59%, #3597bc 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #2fb3a8 17%,#3597bc 59%,#3597bc 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #2fb3a8 17%,#3597bc 59%,#3597bc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+height:3px;
+}
+p.footer{
+	font-size:16px;
+	font-family: 'Lato', sans-serif !important;
+	text-align:center;
+	color:#fff;
+	font-weight:500;
+	margin-top:40px;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+p.footer a{
+	color:#fff;
+	text-decoration:none;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+p.footer a:hover{
+text-decoration:underline;
+}
+/*-- responsive media queries --*/
+@media (max-width: 1440px){
+.content {
+    width: 100%;
+}
+}
+@media (max-width: 1366px){
+	.content {
+		width: 100%;
+	}
+	body {
+
+	}
+}
+@media (max-width: 1280px){
+	.content {
+		width: 100%;
+	}
+	.banner-bottom {
+		min-height: 233px;
+	}
+	body {
+
+	}
+}
+@media (max-width: 1080px){
+.content {
+    width: 100%;
+}
+	body {
+
+	}
+}
+@media (max-width: 1024px){
+.main h1 {
+    font-size: 32px;
+}
+.content-left h6 ,.content-right h5,.content-last h6{
+    font-size: 15px;
+}
+.content-left h2 {
+    font-size: 50px;
+}
+.content-left {
+    float: left;
+    width: 22%;
+}
+.content-last h6 {
+    margin-bottom: 19px;
+}
+.banner-bottom {
+    min-height: 235px;
+}
+body {
+
+}
+
+}
+@media (max-width: 991px){
+.content {
+    width: 100%;
+}
+body {
+
+}
+}
+@media (max-width: 800px){
+		.content {
+		width: 100%;
+	}
+	.content-left h6, .content-right h5, .content-last h6 {
+		font-size: 14px;
+	}
+}
+@media (max-width: 768px){
+	.content {
+		width: 100%;
+	}
+	.main h1 {
+		margin-bottom: 62px;
+	}
+	.content-last h6 {
+		margin-bottom: 35px;
+	}
+	body {
+
+	}
+	p.footer {
+		margin-top: 74px;
+	}
+}
+@media (max-width: 736px){
+	.content-left {
+		float: left;
+		width: 21%;
+	}
+	.banner-bottom {
+		min-height: 190px;
+	}
+	p.footer {
+		margin-top: 55px;
+	}
+}
+@media (max-width: 667px){
+	.content-right {
+		margin: 0 8px;
+	}
+	.content-last h6 {
+		margin-bottom: 20px;
+	}
+	.content-left h2 {
+		font-size: 42px;
+	}
+}
+@media (max-width: 640px){
+p.footer {
+    font-size: 13px;
+line-height:2em;
+}
+.content-left {
+    float: left;
+    width: 20%;
+}
+body {
+
+}
+.main h1 {
+    font-size: 29px;
+}
+}
+@media (max-width: 600px){
+.content-left {
+    float: left;
+    width: 19.6%;
+}
+.main h1 {
+    margin-bottom: 38px;
+}
+.main h1 {
+    font-size: 27px;
+}
+}
+@media (max-width: 568px){
+	.content-left {
+		float: left;
+		width: 18.6%;
+	}
+	.content-left h2 {
+		font-size: 37px;
+	}
+	.content-last h6 {
+		margin-bottom: 14px;
+	}
+	.content-last p {
+		font-size: 14px;
+	}
+	.con-left p {
+		font-size: 14px;
+	}
+}
+@media (max-width: 480px){
+	.main h1 {
+		font-size: 24px;
+	}
+	.content-last {
+		float: left;
+		width: 22%;
+	}
+	.content-right {
+		float: left;
+		width: 19%;
+	}
+	.content-left {
+		float: left;
+		width: 50.1%;
+	}
+	.content-last {
+		margin: 0px 4px 24px;
+	}
+	.content-left{
+		margin-bottom:24px;
+	}
+	.content-right{
+		margin-bottom:24px;
+	}
+	.content-top {
+		padding: 17px 20px 0;
+	}
+	.banner-bottom {
+		min-height: 154px;
+	}
+	p.footer {
+		font-size: 14px;
+	}
+	body {
+
+	}
+}
+@media (max-width: 414px){
+	.content-last {
+		float: left;
+		width: 21%;
+	}
+	p.footer {
+		font-size: 15px;
+	}
+	.main h1 {
+		font-size: 22px;
+	}
+}
+@media (max-width: 384px){
+	.main h1 {
+		font-size: 20px;
+	}
+	.content-top {
+		padding: 17px 10px 0;
+	}
+	.content-last {
+		float: left;
+		width: 21.6%;
+	}
+	.con-left p i {
+		margin-right: 7px;
+	}
+	p.footer {
+		font-size: 13px;
+	}
+	body {
+
+	}
+}
+@media (max-width: 375px){
+	.main h1 {
+		font-size: 19px;
+	}
+	.content {
+		width: 100%;
+	}
+	p.footer {
+		margin-top: 40px;
+	}
+	body {
+
+	}
+}
+@media (max-width: 320px){
+	.main h1 {
+		font-size: 17px;
+	}
+	.content-last {
+		float: left;
+		width: 21.3%;
+	}
+	.content-last {
+		margin: 0px 3px 20px;
+	}
+	.content-last p {
+		font-size: 13px;
+	}
+	.banner-bottom {
+		min-height: 125px;
+	}
+	.con-right {
+		right: 15px;
+	}
+	body {
+
+	}
+	.main {
+	}
+	.con-left {
+		left: 15px;
+	}
+}

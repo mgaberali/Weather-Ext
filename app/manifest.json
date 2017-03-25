@@ -5,10 +5,11 @@
 
 	"description": "A web browser extenstion for checking and displaying the weather based on your location",
 
-	"icons": {
-		"48": "icons/weather-48.png",
-		"96": "icons/weather-96.png"
-	},
+  "icons": {
+    "16": "icons/weather-16.png",
+    "48": "icons/weather-48.png",
+    "128": "icons/weather-128.png"
+  },
 
 	"browser_action": {
     "default_icon": "icons/weather-48.png",
@@ -21,7 +22,7 @@
   },
 
 	"permissions": [
-		"geolocation"
+
 	],
 
   "content_security_policy": "script-src 'self' https://maps.googleapis.com; object-src 'self'"

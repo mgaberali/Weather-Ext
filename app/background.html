@@ -4,29 +4,23 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.css' />
+
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
 
-    <link href="styles/weather-icons.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="styles/weather.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="styles/main.css" rel="stylesheet" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300italic,300,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
   </head>
-  <body ng-app="weatherExtPopup">
+  <body ng-app="weatherExtBackground">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <div>
-    <div ng-view=""></div>
+      <div ng-view=""></div>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -53,8 +47,6 @@
         <script src="scripts/services/geoip_service.js"></script>
         <script src="scripts/services/google_places_service.js"></script>
         <script src="scripts/models/weather_model.js"></script>
-        <script src="scripts/filters/weather_to_class_filter.js"></script>
-        <script src="scripts/controllers/popup.js"></script>
         <script src="scripts/controllers/background_controller.js"></script>
         <!-- endbuild -->
 

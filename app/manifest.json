@@ -11,10 +11,14 @@
 	},
 
 	"browser_action": {
-	    "default_icon": "icons/weather-48.png",
-	    "default_title": "Weather Checker",
-	    "default_popup": "index.html"
-  	},
+    "default_icon": "icons/weather-48.png",
+    "default_title": "Weather Checker",
+    "default_popup": "index.html"
+  },
+
+  "background": {
+    "page": "background.html"
+  },
 
 	"permissions": [
 		"geolocation"

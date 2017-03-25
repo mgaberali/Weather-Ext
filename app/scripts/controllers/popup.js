@@ -1,34 +1,14 @@
 'use strict';
 
 angular.module('weatherExtApp')
-  .controller('PopupController', ['$scope', 'WeatherService', 'GeoIpService', 'WEATHER_API_UNITS', 'DateUtil', 'GooglePlacesService',
-   function($scope, WeatherService, GeoIpService, WEATHER_API_UNITS, DateUtil, GooglePlacesService){
+  .controller('PopupController', ['$scope', 'DateUtil', 'GooglePlacesService', 'WeatherModel',
+   function($scope, DateUtil, GooglePlacesService, WeatherModel){
 
     $scope.cityImageUrl = 'url(\'images/banner.jpg\') no-repeat';
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position){
-
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-
-        WeatherService.getDailyForecastByCoordinates(latitude, longitude, WEATHER_API_UNITS.CELSIUS, function(data){
-          displayWeather(data);
-        });
-
-      });
-
-    } else {
-
-      GeoIpService.getLocation(function(location){
-
-        WeatherService.getDailyForecastByCity(location.city, location.country.code, WEATHER_API_UNITS.CELSIUS, function(data){
-          displayWeather(data);
-        });
-
-      });
-
-    }
+    WeatherModel.getWeatherForecast(function(weatherData){
+      displayWeather(weatherData);
+    }, false);
 
     function displayWeather(weatherData){
       $scope.unit = 'C';

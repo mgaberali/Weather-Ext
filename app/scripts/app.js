@@ -16,6 +16,11 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
+  ]);
+
+angular
+  .module('weatherExtPopup', [
+    'weatherExtApp'
   ])
   .config(function ($routeProvider, $compileProvider) {
 
@@ -25,6 +30,25 @@ angular
       .when('/', {
         templateUrl: 'views/popup.html',
         controller: 'PopupController',
+        controllerAs: 'main'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
+
+angular
+  .module('weatherExtBackground', [
+    'weatherExtApp'
+  ])
+  .config(function ($routeProvider, $compileProvider) {
+
+    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data|chrome-extension):/);
+
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/background_view.html',
+        controller:  'BackgroundController',
         controllerAs: 'main'
       })
       .otherwise({

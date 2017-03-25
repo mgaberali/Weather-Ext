@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('weatherExtApp')
-  .controller('BackgroundController', ['WeatherModel',
-   function(WeatherModel){
+  .controller('BackgroundController', ['WeatherModel', 'BrowserUtil',
+   function(WeatherModel, BrowserUtil){
 
     checkWeather();
 
@@ -13,9 +13,11 @@ angular.module('weatherExtApp')
     function checkWeather(){
       WeatherModel.getWeatherForecast(function(weatherData){
 
+        var api = BrowserUtil.getBrowserApi();
+
         var temp = weatherData.list[0].temp.day | 0;
         console.log(temp);
-        chrome.browserAction.setBadgeText({text: temp + "°C"});
+        api.browserAction.setBadgeText({text: temp + "°C"});
 
       }, true);
     }

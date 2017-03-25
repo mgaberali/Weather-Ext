@@ -15,6 +15,18 @@ angular.module('weatherExtApp').factory('BrowserUtil', [
 
       }
 
+      factory.isChrome = function(){
+
+        var browserName = detectBrowser();
+
+        if(browserName.includes("Chrome")){
+          return true;
+        } else {
+          return false;
+        }
+
+      };
+
       function detectBrowser(){
           var ua= navigator.userAgent, tem,
           M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];

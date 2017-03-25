@@ -16,7 +16,6 @@ angular.module('weatherExtApp')
         var api = BrowserUtil.getBrowserApi();
 
         var temp = weatherData.list[0].temp.day | 0;
-        console.log(temp);
         api.browserAction.setBadgeText({text: temp + "°C"});
 
       }, true);

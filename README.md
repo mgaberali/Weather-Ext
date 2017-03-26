@@ -34,3 +34,7 @@ Now, **dist/** directory contains extension files. You can load extension files 
 - Chrome: [Load Extension on Chrome Guide](https://developer.chrome.com/extensions/getstarted#unpacked)
 - Firefox: [Temporary Installation in Firefox Guide](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox)
 - Opera: [Testing and Debugging Guide](https://dev.opera.com/extensions/testing/)
+
+# Test
+npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-core phantomjs-prebuilt --save-dev
+npm install karma-chrome-launcher --save-dev

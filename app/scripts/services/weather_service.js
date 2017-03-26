@@ -3,7 +3,7 @@ angular.module('weatherExtApp').factory('WeatherService', ['$http', 'WEATHER_API
 
         var factory = {};
 
-        factory.getDailyForecastByCoordinates = function(lat, long, unit, callback){
+        factory.getDailyForecastByCoordinates = function(lat, long, unit, callback, failCallback){
 
           $http({
             method: "GET",
@@ -13,11 +13,14 @@ angular.module('weatherExtApp').factory('WeatherService', ['$http', 'WEATHER_API
           },
           function fail(error){
             console.log(error);
+            if(failCallback){
+              failCallback(error);
+            }
           });
 
         };
 
-        factory.getDailyForecastByCity = function(city, countryCode, unit, callback){
+        factory.getDailyForecastByCity = function(city, countryCode, unit, callback, failCallback){
 
           $http({
             method: "GET",
@@ -27,6 +30,9 @@ angular.module('weatherExtApp').factory('WeatherService', ['$http', 'WEATHER_API
           },
           function fail(error){
             console.log(error);
+            if(failCallback){
+              failCallback(error);
+            }
           });
 
         };

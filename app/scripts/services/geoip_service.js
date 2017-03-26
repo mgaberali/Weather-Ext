@@ -1,9 +1,9 @@
 angular.module('weatherExtApp').factory('GeoIpService', ['$http', 'GEOIP_API_URL',
-    function($http, GEOIP_API_URL) {
+    function($http, GEOIP_API_URL, failCallback) {
 
         var factory = {};
 
-        factory.getLocation = function(callback){
+        factory.getLocation = function(callback, failCallback){
 
           $http({
             method: "GET",
@@ -13,6 +13,9 @@ angular.module('weatherExtApp').factory('GeoIpService', ['$http', 'GEOIP_API_URL
           },
           function fail(error){
             console.log(error);
+            if(failCallback){
+              failCallback(error);
+            }
           });
 
         };

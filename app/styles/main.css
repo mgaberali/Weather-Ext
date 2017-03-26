@@ -33,3 +33,25 @@ body{
 .wi.other-days.storm{
   color: #37525e;
 }
+
+.error{
+  height: 400px;
+  background: #e5e5e5;
+  text-align: center;
+  padding-top: 50px
+}
+
+.error h1{
+  color: black;
+  text-transform: none;
+  font-family: initial;
+  margin-bottom: 10px
+}
+
+.retry{
+  color: #000;
+  background-color: #c6c6c6;
+  border-color: #c6c6c6;
+  border-radius: 0;
+  font-size: 20px;
+}

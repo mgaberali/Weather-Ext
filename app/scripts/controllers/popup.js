@@ -5,10 +5,43 @@ angular.module('weatherExtApp')
    function($scope, DateUtil, GooglePlacesService, WeatherModel){
 
     $scope.cityImageUrl = 'url(\'images/banner.jpg\') no-repeat';
+    $scope.showErrorPage = false;
+    $scope.showLoadingPage = true;
 
-    WeatherModel.getWeatherForecast(function(weatherData){
-      displayWeather(weatherData);
-    }, false);
+    getWeather();
+
+    $scope.retry = function(){
+      $scope.showLoadingPage = true;
+      $scope.showErrorPage = false;
+      getWeather();
+    }
+
+    function getWeather(){
+     WeatherModel.getWeatherForecast(function(weatherData){
+
+        displayWeather(weatherData);
+
+        setTimeout(function(){
+          $scope.$apply(function(){
+            $scope.showLoadingPage = false;
+            $scope.showErrorPage = false;
+          });
+
+        }, 500);
+
+
+        }, false,
+        function(error){
+
+          setTimeout(function(){
+            $scope.$apply(function(){
+              $scope.showLoadingPage = false;
+              $scope.showErrorPage = true;
+            });
+          }, 500);
+
+        });
+    }
 
     function displayWeather(weatherData){
       $scope.unit = 'C';
@@ -17,7 +50,7 @@ angular.module('weatherExtApp')
 
        GooglePlacesService.getImageForCity(weatherData.city.name, function(imageUrl){
 
-           $scope.$apply(function () {
+           $scope.$apply(function(){
               $scope.cityImageUrl = 'url(\''+ imageUrl +'\') no-repeat';
            });
 

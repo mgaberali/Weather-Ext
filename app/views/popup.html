@@ -1,4 +1,4 @@
-<div class="main">
+<div ng-show="!showErrorPage && !showLoadingPage" class="main">
   <div class="content">
     <div class="content-top">
       <div class="content-left">
@@ -36,6 +36,23 @@
       <div class="clear"></div>
 
     </div>
+  </div>
+</div>
+
+<div ng-show="showErrorPage" class="main">
+  <div class="error">
+    <img src="images/error.png" width="150px" />
+    <br/>
+    <br/>
+    <h1>No connection</h1>
+    <br/>
+    <button ng-click="retry()" class="btn retry">Retry</button>
+  </div>
+</div>
+
+<div ng-show="showLoadingPage" class="main">
+  <div class="loading">
+    <img src="images/loading.gif" width="600" height="400px" />
   </div>
 </div>
 

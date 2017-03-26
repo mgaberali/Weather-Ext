@@ -3,7 +3,7 @@ angular.module('weatherExtApp').factory('WeatherModel', ['WeatherService', 'GeoI
 
         var factory = {};
 
-        factory.getWeatherForecast = function (callback, isBackgroundScript){
+        factory.getWeatherForecast = function (callback, isBackgroundScript, failCallback){
 
           if (BrowserUtil.isChrome() && navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position){
@@ -40,7 +40,9 @@ angular.module('weatherExtApp').factory('WeatherModel', ['WeatherService', 'GeoI
             },
             function(error){
               console.log("Error when get current position");
-              alert('ERROR(' + error.code + '): ' + error.message);
+              if(failCallback){
+                failCallback(error);
+              }
             });
 
           } else {
@@ -65,6 +67,12 @@ angular.module('weatherExtApp').factory('WeatherModel', ['WeatherService', 'GeoI
                 callback(data);
               });
 
+            },
+            function(error){
+              console.log("Fail in getting location from GeoIP API");
+              if(failCallback){
+                failCallback(error);
+              }
             });
           }
         };

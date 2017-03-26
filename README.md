@@ -36,5 +36,7 @@ Now, **dist/** directory contains extension files. You can load extension files 
 - Opera: [Testing and Debugging Guide](https://dev.opera.com/extensions/testing/)
 
 # Test
-npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-core phantomjs-prebuilt --save-dev
-npm install karma-chrome-launcher --save-dev
+To run unit test you have to install the following
+```sh
+npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-core phantomjs-prebuilt karma-chrome-launcher --save-dev
+```

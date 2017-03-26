@@ -32,7 +32,7 @@ angular.module('weatherExtApp')
 
         }, false,
         function(error){
-
+          $scope.showErrorPage = true;
           setTimeout(function(){
             $scope.$apply(function(){
               $scope.showLoadingPage = false;

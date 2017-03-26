@@ -3,14 +3,13 @@ A browser extension for displaying weather forecast based on your location. It w
 
 # Quick Test
 On Google Chrome:
-- Open from menu settings -> extensions
+- Open from menu -> settings -> extensions
 - Drag **output/chrome/weather.crx** file on the browser
 - Then, click **Add extension**
 
 On Mozilla Firefox:
-- Open "about:debugging" in Firefox
-- click **Load Temporary Add-on**
-- Select **output/firefox/weather.zip** file
+- Open Open from menu -> Add-ons
+- Drag **output/firefox/weather.xpi** file on the browser
 
 # Installation
 First, install [Node.js](https://nodejs.org/)
@@ -22,6 +21,10 @@ $ npm install bower
 and **grunt-cli**
 ```sh
 $ npm install grunt-cli
+```
+and to for unit testing you have to install the following
+```sh
+$ npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-core phantomjs-prebuilt karma-chrome-launcher --save-dev
 ```
 
 # Build
@@ -36,7 +39,7 @@ Now, **dist/** directory contains extension files. You can load extension files 
 - Opera: [Testing and Debugging Guide](https://dev.opera.com/extensions/testing/)
 
 # Test
-To run unit test you have to install the following
+To run unit test
 ```sh
-npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-core phantomjs-prebuilt karma-chrome-launcher --save-dev
+$ grunt test
 ```

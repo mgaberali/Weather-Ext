@@ -22,13 +22,13 @@ and **grunt-cli**
 ```sh
 $ npm install grunt-cli
 ```
-and to for unit testing you have to install the following
+and for unit testing you have to install the following
 ```sh
 $ npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-core phantomjs-prebuilt karma-chrome-launcher --save-dev
 ```
 
 # Build
-You are going to build project using grant-cli and the build outut will be
+You are going to build project using grant-cli and the build output will be
 in **dist/** directory
 ```sh
 $ grunt build

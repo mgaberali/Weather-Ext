@@ -20,7 +20,7 @@ $ npm install bower
 ```
 and **grunt-cli**
 ```sh
-$ npm install grunt-cli
+$ npm install -g grunt-cli
 ```
 and for unit testing you have to install the following
 ```sh
@@ -30,6 +30,16 @@ $ npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-c
 # Build
 You are going to build project using grant-cli and the build output will be
 in **dist/** directory
+
+First, run the following command on project directory
+```sh
+$ npm install
+```
+Then,
+```sh
+$ bower install
+```
+Then,
 ```sh
 $ grunt build
 ```
